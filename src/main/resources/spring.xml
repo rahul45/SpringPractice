@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC
+ "-//SPRING//DTD BEAN 2.0//EN"
+ "http://springframework.org/dtd/spring-beans-2.0.dtd" >
+<beans>
+	<!-- <bean id="triangle" class="com.ems.drawing.Triangle">
+		setter injection
+		<property name="type" value="Rahul singh bhadouria"></property>
+		
+		constructor injection
+		<constructor-arg value="Constructor injection"></constructor-arg>
+		
+		using index we can make argument number wise but care full if are 
+			giving 1 as a index so there shud be o index argument wud also be there otherwise 
+			it will create error
+		<constructor-arg index="0" value="20"></constructor-arg>
+		
+		by index argument for 2 argument or more
+		<constructor-arg index="0" value="12365"></constructor-arg>
+		<constructor-arg index="1" value="12"></constructor-arg>
+		
+		using type of data in  constructor
+		<constructor-arg type="java.lang.String" value="String value"></constructor-arg>
+		<constructor-arg type="int" value="20"></constructor-arg>
+	</bean> -->
+	<!-- Object Injecting -->
+	<!-- <bean id="triangle" class="com.ems.drawing.Triangle">
+		<property name="pointA" ref="zero"></property>
+		<property name="pointB" ref="one"></property>
+		<property name="pointC" ref="two"></property>
+	</bean>
+	<bean id="zero" class="com.ems.drawing.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+		<bean id="one" class="com.ems.drawing.Point">
+		<property name="x" value="10"></property>
+		<property name="y" value="2"></property>
+	</bean>
+		<bean id="two" class="com.ems.drawing.Point">
+		<property name="x" value="40"></property>
+		<property name="y" value="40"></property>
+	</bean> -->
+	<!-- Inner Bean -->
+<!-- 	<bean id="triangle" class="com.ems.drawing.Triangle">
+		<property name="pointA" ref="zero"></property>
+		<property name="pointB" >
+			<bean  class="com.ems.drawing.Point">
+				<property name="x" value="10"></property>
+				<property name="y" value="2"></property>
+			</bean>	
+		</property>
+		
+		<property name="pointC">
+			<bean id="two" class="com.ems.drawing.Point">
+				<property name="x" value="40"></property>
+				<property name="y" value="40"></property>
+			</bean> 
+		</property>
+	</bean>
+	
+	<bean id="zero" class="com.ems.drawing.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+	</bean> -->
+	<!--using collection   -->
+	<!-- 	<bean id="triangle" class="com.ems.drawing.Triangle">
+			<property name="points">
+				<list>
+					<ref bean="zero"></ref>
+					<ref bean="one"></ref>
+					<ref bean="two"></ref>
+				</list>
+			</property>
+		</bean>
+		<bean id="zero" class="com.ems.drawing.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+		<bean id="one" class="com.ems.drawing.Point">
+		<property name="x" value="10"></property>
+		<property name="y" value="2"></property>
+	</bean>
+		<bean id="two" class="com.ems.drawing.Point">
+		<property name="x" value="40"></property>
+		<property name="y" value="40"></property>
+	</bean> -->
+	<!-- autowire by default is off byname  -->
+ <bean id="triangle" class="com.ems.drawing.Triangle" autowire="byName">
+	<!-- 	<property name="pointA" ref="zero"></property>
+		<property name="pointB" ref="one"></property>
+		<property name="pointC" ref="two"></property> -->
+	</bean>
+	<bean id="pointA" class="com.ems.drawing.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+		<bean id="pointB" class="com.ems.drawing.Point">
+		<property name="x" value="10"></property>
+		<property name="y" value="2"></property>
+	</bean>
+		<bean id="pointC" class="com.ems.drawing.Point">
+		<property name="x" value="40"></property>
+		<property name="y" value="40"></property>
+	</bean> 
+</beans>
